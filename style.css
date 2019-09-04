@@ -104,12 +104,14 @@ nav a:hover {
 }
 
 #email i:hover + p {
+  visibility: visible;
   transform: translate(-100%, 0);
   /* transition: opacity 250ms, transform 250ms; */
   opacity: 1;
 }
 
 #email p {
+  visibility: hidden;
   position: absolute;
   left: -30px;
   transform: translate(-100%, calc(30px + 1em));
@@ -134,4 +136,23 @@ nav a:hover {
 
 #pics img {
   width: 100%;
+}
+
+/* Media Queries */
+
+@media (max-width: 550px) {
+  #home h1 {
+    font-size: 18vw;
+    margin-top: -25vh;
+  }
+
+  #email {
+    position: static;
+  }
+
+  #email p {
+    left: 0;
+    right: 15px;
+    bottom: 2em;
+  }
 }
