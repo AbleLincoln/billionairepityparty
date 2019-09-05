@@ -96,6 +96,14 @@ nav a:hover {
   bottom: 30px;
   right: 30px;
   margin-top: 3em;
+  opacity: 0.95;
+}
+
+#show {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  opacity: 0.9;
 }
 
 #email {
@@ -104,22 +112,25 @@ nav a:hover {
 }
 
 #email i:hover + p {
-  visibility: visible;
-  transform: translate(-100%, 0);
+  /* visibility: visible; */
+  /* display: block; */
+  /* transform: translate(-100%, 0); */
   /* transition: opacity 250ms, transform 250ms; */
   opacity: 1;
 }
 
 #email p {
-  visibility: hidden;
+  /* visibility: hidden; */
+  /* display: none; */
   position: absolute;
   left: -30px;
   transform: translate(-100%, calc(30px + 1em));
+  transform: translate(-100%, 0);
   bottom: 0;
   font-size: 90%;
   opacity: 0;
 
-  transition: all 250ms;
+  transition: all 500ms;
 }
 
 /* About */

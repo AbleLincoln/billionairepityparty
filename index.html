@@ -13,18 +13,9 @@
   <body>
     <section id="home">
       <h1>Billionaire Pity Party<span style="color: red">.</span></h1>
+      <p id="quotehole">Zip zap zop</p>
 
-      <p>
-        Billionaire Pity Party is a sketch comedy team based out of Los Angeles,
-        CA. The byproduct of USC, UCLA, and inattentive parents, you can catch
-        us every fifth Thursday at the
-        <a
-          href="https://www.packtheater.com"
-          target="_blank"
-          style="font-weight: 400; white-space: nowrap;"
-          >Pack Theater</a
-        >, or at Whole Foods failing to cope with adulthood.
-      </p>
+      <p id="show">Next show: <strong>Feb 2020</strong></p>
 
       <nav>
         <a id="email">
@@ -38,24 +29,20 @@
       </nav>
     </section>
 
-    <section id="pics">
-      <img src="img/pic1.JPG" alt="" />
-      <img src="img/pic4.JPG" alt="" />
-      <img src="img/pic3.JPG" alt="" />
-    </section>
+    <script>
+      const lines = [
+        "Stephen Ryder is innocent",
+        "Finally, an all male sketch group for zoomers",
+        "630-862-6499",
+        "#FreeRandy",
+        "Zip zap zop",
+        "Impeach Garcetti",
+        `Dear Hollywood, You’re done. I moved out here from my hometown in Oklahoma to make it as a big-shot movie star and you have failed time and again to notice what you’re missing and for that you are done. Canceled.`
+      ];
 
-    <!-- <section id="about">
-      <header>
-        <h1>Billionaire Pity Party.</h1>
+      const i = Math.floor(Math.random() * lines.length);
 
-        <nav>
-          <a href="#">About</a>
-          <a href="#">Shows</a>
-          <a href="#">Contact</a>
-        </nav>
-      </header>
-    </section> -->
-
-    <script src="slider.js"></script>
+      document.getElementById("quotehole").innerText = lines[i];
+    </script>
   </body>
 </html>
