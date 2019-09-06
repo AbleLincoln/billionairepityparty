@@ -4,16 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>💰BPP 💰</title>
+    <title>Billionaire Pity Party</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="resets.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/e3b6a37780.js"></script>
   </head>
   <body>
-    <section id="home">
-      <h1>Billionaire Pity Party<span style="color: red">.</span></h1>
-      <p id="quotehole">Zip zap zop</p>
+    <div class="wrapper grid-wrapper active" id="home">
+      <section id="hero">
+        <h1>Billionaire Pity Party<span style="color: red">.</span></h1>
+        <p id="quotehole">Finally, an all male sketch group for Zoomers</p>
+      </section>
 
       <p id="show">Next show: <strong>Feb 2020</strong></p>
 
@@ -25,24 +27,66 @@
         <a href="https://www.facebook.com/BillionairePityParty/" target="_blank"
           ><i class="fab fa-facebook-f"></i
         ></a>
-        <a href="#pics"><i class="fas fa-camera-retro"></i></a>
+        <a onclick="toggleSection('pics'); startFlipPic();"
+          ><i class="fas fa-camera-retro"></i
+        ></a>
       </nav>
-    </section>
+    </div>
+
+    <div class="grid-wrapper wrapper" id="pics">
+      <nav>
+        <a onclick="toggleSection('home');">
+          <h2>BPP<span style="color: red">.</span></h2>
+        </a>
+      </nav>
+      <img src="img/1.jpg" alt="img preload" style="display: none" />
+
+      <!-- <article style="background: center/cover url(img/1.jpg)"></article> -->
+    </div>
 
     <script>
+      // generate line
       const lines = [
+        "",
         "Stephen Ryder is innocent",
-        "Finally, an all male sketch group for zoomers",
+        "Finally, an all male sketch group for Zoomers",
         "630-862-6499",
         "#FreeRandy",
         "Zip zap zop",
         "Impeach Garcetti",
-        `Dear Hollywood, You’re done. I moved out here from my hometown in Oklahoma to make it as a big-shot movie star and you have failed time and again to notice what you’re missing and for that you are done. Canceled.`
+        `Dear Hollywood, You’re done. I moved out here from my hometown in Oklahoma to make it as a big-shot movie star and you have failed time and again to notice what you’re missing and for that you are done. Canceled.`,
+        "feat. Big-titted Wario",
+        "Ben Platt is an industry plant",
+        "r/libertarian",
+        "something something free markets...",
+        "We da best music",
+        "Everything is for sale.",
+        "Attention: there is now a TJs in Marina Del Rey",
+        "Sponsored by Masterpiece Cake Shop",
+        "Xomad is hiring!"
       ];
 
-      const i = Math.floor(Math.random() * lines.length);
+      const generateLine = () => {
+        const i = Math.floor(Math.random() * lines.length);
+        document.getElementById("quotehole").innerText = lines[i];
+      };
 
-      document.getElementById("quotehole").innerText = lines[i];
+      // toggle sections
+      const toggleSection = sectionName => {
+        // console.log(Date.now());
+        document.querySelectorAll(".wrapper").forEach(wrapper => {
+          if (wrapper.id === sectionName) wrapper.classList.add("active");
+          else wrapper.classList.remove("active");
+        });
+        // console.log(Date.now());
+
+        if (sectionName === "home") generateLine();
+      };
+
+      // go!
+      generateLine();
     </script>
+
+    <script src="js/gallery.js"></script>
   </body>
 </html>

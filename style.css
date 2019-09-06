@@ -24,6 +24,7 @@ h1 {
 a {
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
 }
 
 strong {
@@ -37,7 +38,7 @@ body {
 }
 
 section {
-  height: 100vh;
+  /* height: 100vh; */
   box-sizing: border-box;
 }
 
@@ -69,9 +70,37 @@ nav a:hover {
   /* border-bottom: 1px solid #fff; */
 }
 
-/* Home */
+.wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 
-#home {
+  height: 100vh;
+
+  transition: all 250ms;
+}
+
+.wrapper.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.wrapper:not(.active) {
+  opacity: 0;
+  z-index: 0;
+}
+
+.grid-wrapper {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "hero hero" "show nav";
+}
+
+#hero {
+  grid-area: hero;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -80,29 +109,38 @@ nav a:hover {
   padding: 30px;
 }
 
-#home h1 {
+#hero h1 {
   font-size: 5em;
 }
 
-#home p {
+#hero p {
   margin-top: 2em;
   line-height: 1.5;
   max-width: 800px;
+  font-size: 1.25rem;
 }
 
-#home nav {
-  position: absolute;
-  /* top: 0; */
-  bottom: 30px;
-  right: 30px;
-  margin-top: 3em;
-  opacity: 0.95;
+#show,
+nav {
+  padding: 30px;
+}
+
+nav {
+  grid-area: nav;
+  justify-self: right;
+}
+
+#pics nav {
+  margin-right: 15px;
+}
+
+#pics nav a {
+  margin: 0;
+  font-size: 4rem;
 }
 
 #show {
-  position: absolute;
-  bottom: 30px;
-  left: 30px;
+  grid-area: show;
   opacity: 0.9;
 }
 
@@ -149,12 +187,57 @@ nav a:hover {
   width: 100%;
 }
 
+#pics article {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+
+  opacity: 0;
+  animation: fadeIn 2000ms ease-in 1000ms forwards;
+}
+
+#pics article.fadeOut {
+  animation: fadeIn 1500ms reverse;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* Media Queries */
 
-@media (max-width: 550px) {
-  #home h1 {
+@media (max-width: 768px) {
+  .grid-wrapper {
+    grid-template-rows: 100vh 20vh 80vh;
+    grid-template-areas:
+      "hero hero"
+      "nav nav"
+      "show show";
+  }
+
+  #hero h1 {
     font-size: 18vw;
-    margin-top: -25vh;
+  }
+
+  #hero p {
+    font-size: 1.1rem;
+  }
+
+  nav {
+    justify-self: center;
+  }
+
+  #show {
+    justify-self: center;
+    align-self: end;
   }
 
   #email {
@@ -163,7 +246,21 @@ nav a:hover {
 
   #email p {
     left: 0;
-    right: 15px;
-    bottom: 2em;
+    right: 0;
+    font-size: 6vw;
+    text-align: center;
+    transform: translate(0);
+  }
+
+  #pics {
+    position: fixed;
+  }
+
+  #pics nav {
+    grid-area: hero;
+
+    align-self: end;
+    justify-self: right;
+    padding-right: 0;
   }
 }
