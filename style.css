@@ -263,4 +263,9 @@ nav {
     justify-self: right;
     padding-right: 0;
   }
+
+  #pics article {
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+  }
 }
