@@ -121,6 +121,7 @@ nav a:hover {
 }
 
 #show,
+#about-link,
 nav {
   padding: 30px;
 }
@@ -139,7 +140,8 @@ nav {
   font-size: 4rem;
 }
 
-#show {
+#show,
+#about-link {
   grid-area: show;
   opacity: 0.9;
 }
@@ -172,14 +174,6 @@ nav {
 }
 
 /* About */
-
-#about {
-  background: url(./img/about.JPG);
-  /* background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url(./img/about.JPG); */
-  background-size: cover;
-  background-position: 100%;
-}
 
 /* Pics */
 

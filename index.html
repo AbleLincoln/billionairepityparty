@@ -17,7 +17,39 @@
         <p id="quotehole">Finally, an all male sketch group for Zoomers</p>
       </section>
 
-      <p id="show">Next show: <strong>Feb 2020</strong></p>
+      <!-- <p id="show">Next show: <strong>Feb 2020</strong></p> -->
+      <p id="about-link"><a onclick="toggleSection('about')">About</a></p>
+
+      <nav>
+        <a id="email">
+          <i class="fas fa-envelope"></i>
+          <p>contact<span class="red">@</span>billionairepityparty.com</p>
+        </a>
+        <a href="https://www.facebook.com/BillionairePityParty/" target="_blank"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a onclick="toggleSection('pics'); startFlipPic();"
+          ><i class="fas fa-camera-retro"></i
+        ></a>
+      </nav>
+    </div>
+
+    <div class="grid-wrapper wrapper" id="about">
+      <section id="hero">
+        <p>
+          Billionaire Pity Party is a sketch comedy team based out of Los
+          Angeles, CA. The byproduct of USC, UCLA, and inattentive parents, you
+          can catch us every fifth Thursday at the
+          <a
+            href="https://www.packtheater.com"
+            target="_blank"
+            style="font-weight: 400; white-space: nowrap;"
+            >Pack Theater</a
+          >, or at Whole Foods failing to cope with adulthood.
+        </p>
+      </section>
+
+      <p id="about-link"><a onclick="toggleSection('home')">Home</a></p>
 
       <nav>
         <a id="email">
