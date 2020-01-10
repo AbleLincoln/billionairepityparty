@@ -132,9 +132,25 @@ nav a:hover {
   background-color: red;
   padding: 1rem;
   margin: 1rem;
+  animation-name: wobble;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  /* animation: wobble 1s linear 0 infinite alternate none; */
+}
+
+#tix a:last-child {
+  animation-delay: 0.2s;
 }
 
 @keyframes wobble {
+  0% {
+    transform: rotate(0.75deg);
+  }
+  100% {
+    transform: rotate(-0.75deg);
+  }
 }
 
 #show,
