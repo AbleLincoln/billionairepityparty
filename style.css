@@ -164,6 +164,12 @@ nav {
   justify-self: right;
 }
 
+nav#mobile {
+  display: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
 #pics nav {
   margin-right: 15px;
 }
@@ -247,7 +253,7 @@ nav {
 
 @media (max-width: 768px) {
   .grid-wrapper {
-    grid-template-rows: 100vh 20vh 80vh;
+    grid-template-rows: 90vh 10vh 0vh;
     grid-template-areas:
       "hero hero"
       "nav nav"
@@ -268,6 +274,16 @@ nav {
 
   nav {
     justify-self: center;
+  }
+
+  nav,
+  #about-link {
+    display: none;
+  }
+
+  nav#mobile,
+  #pics nav {
+    display: block;
   }
 
   #show {
