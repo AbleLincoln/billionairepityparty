@@ -14,22 +14,37 @@
     <div class="wrapper grid-wrapper active" id="home">
       <section id="hero">
         <h1>Billionaire Pity Party<span style="color: red">.</span></h1>
-        <p id="quotehole">Finally, an all male sketch group for Zoomers</p>
+        <!-- <p id="quotehole"></p> -->
+        <div id="tix">
+          <p>Chicago Sketchfest 2020 tickets!</p>
+          <a href="https://www.stage773.com/cscf-shows/billionaire-pity-party"
+            >Friday, Jan 10 @ 9pm</a
+          >
+          <a href="https://www.stage773.com/cscf-shows/billionaire-pity-party-2"
+            >Saturday, Jan 11 @ 9pm</a
+          >
+        </div>
       </section>
 
       <!-- <p id="show">Next show: <strong>Feb 2020</strong></p> -->
-      <p id="about-link"><a onclick="toggleSection('about')">About</a></p>
+      <p id="about-link">
+        <a onclick="toggleSection('about')">About</a>
+
+        <a onclick="toggleSection('pics'); startFlipPic();">Pics</a>
+      </p>
 
       <nav>
         <a id="email">
           <i class="fas fa-envelope"></i>
           <p>contact<span class="red">@</span>billionairepityparty.com</p>
         </a>
+        <a
+          href="https://www.instagram.com/billionairepityparty/"
+          target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
         <a href="https://www.facebook.com/BillionairePityParty/" target="_blank"
           ><i class="fab fa-facebook-f"></i
-        ></a>
-        <a onclick="toggleSection('pics'); startFlipPic();"
-          ><i class="fas fa-camera-retro"></i
         ></a>
       </nav>
     </div>
@@ -56,6 +71,9 @@
           <i class="fas fa-envelope"></i>
           <p>contact<span class="red">@</span>billionairepityparty.com</p>
         </a>
+        <a href="https://www.facebook.com/BillionairePityParty/" target="_blank"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
         <a href="https://www.facebook.com/BillionairePityParty/" target="_blank"
           ><i class="fab fa-facebook-f"></i
         ></a>
@@ -95,7 +113,13 @@
         "Everything is for sale.",
         "Attention: there is now a TJs in Marina Del Rey",
         "Sponsored by Masterpiece Cake Shop",
-        "Xomad is hiring!"
+        "Xomad is hiring!",
+        "google aoc feet pics",
+        "John Lennon beat his wife",
+        "now serving Billie Eilish Teat Milk",
+        "Bernie Sanders Sloppy Toppy Parking Lot Shootout",
+        "fuck a baby yoda im tryna put a baby in YoDamn guts",
+        "Stop. No More."
       ];
 
       const generateLine = () => {
